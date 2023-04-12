@@ -17,528 +17,528 @@ bcbf68d on Oct 7, 2022 History 1 contributor 593 lines (385 sloc) 10.1 KB
   </head>
   <body>
     <script>
-            // Вопрос № 1
-            function sayHi() {
-                console.log(name)
-                console.log(age)
-                var name = "John"
-                let age = 30
-            }
-      			// sayHi();
-      //undefined  "Ошибка"
+                  // Вопрос № 1
+                  function sayHi() {
+                      console.log(name)
+                      console.log(age)
+                      var name = "John"
+                      let age = 30
+                  }
+            			// sayHi();
+            //undefined  "Ошибка"
 
-            // Вопрос № 2
-            for (var i = 0; i < 3; i++) {
-                // setTimeout(() => console.log(i), 1)
-            }
+                  // Вопрос № 2
+                  for (var i = 0; i < 3; i++) {
+                      // setTimeout(() => console.log(i), 1)
+                  }
 
-            for (let i = 0; i < 3; i++) {
-                // setTimeout(() => console.log(i), 1)
-            }
+                  for (let i = 0; i < 3; i++) {
+                      // setTimeout(() => console.log(i), 1)
+                  }
+      //
 
+                  // Вопрос № 3
+                  const shape = {
+                      radius: 10,
+                      diameter() {
+                          return this.radius * 2
+                      },
+                      perimeter: () => 2 * Math.PI * this.radius
+                  }
 
-            // Вопрос № 3
-            const shape = {
-                radius: 10,
-                diameter() {
-                    return this.radius * 2
-                },
-                perimeter: () => 2 * Math.PI * this.radius
-            }
+                  console.log(shape.diameter())
+                  console.log(shape.perimeter())
 
-            console.log(shape.diameter())
-            console.log(shape.perimeter())
 
+                  // Вопрос № 4
+                  console.log(+true)
+                  console.log(!"John")
 
-            // Вопрос № 4
-            console.log(+true)
-            console.log(!"John")
 
 
 
+                  // Вопрос № 5
+                  let c = { greeting: "Hey!" }
+                  let d
 
-            // Вопрос № 5
-            let c = { greeting: "Hey!" }
-            let d
+                  d = c
+                  c.greeting = "Hello!"
+                  console.log(d.greeting)
 
-            d = c
-            c.greeting = "Hello!"
-            console.log(d.greeting)
 
 
+                  // Вопрос № 6
+                  let a = 3
+                  let b = new Number(3)
+                  let c = 3
 
-            // Вопрос № 6
-            let a = 3
-            let b = new Number(3)
-            let c = 3
+                  console.log(a == b)
+                  console.log(a === b)
+                  console.log(b === c)
 
-            console.log(a == b)
-            console.log(a === b)
-            console.log(b === c)
 
 
+                  // Вопрос № 7
+                  class Chameleon {
+                      static colorChange(newColor) {
+                          this.newColor = newColor
+                          return this.newColor
+                      }
 
-            // Вопрос № 7
-            class Chameleon {
-                static colorChange(newColor) {
-                    this.newColor = newColor
-                    return this.newColor
-                }
+                      constructor({ newColor = "green" } = {}) {
+                          this.newColor = newColor
+                      }
+                  }
 
-                constructor({ newColor = "green" } = {}) {
-                    this.newColor = newColor
-                }
-            }
+                  const freddie = new Chameleon({ newColor: "pink" })
+                  freddie.colorChange("orange")
 
-            const freddie = new Chameleon({ newColor: "pink" })
-            freddie.colorChange("orange")
 
 
+                  // Вопрос № 8...............
+                  // обратите внимание: код выполняется в нестрогом режиме
+                  let greeting
+                  greetign = {} // опечатка!
+                  console.log(greetign)
 
-            // Вопрос № 8...............
-            // обратите внимание: код выполняется в нестрогом режиме
-            let greeting
-            greetign = {} // опечатка!
-            console.log(greetign)
 
 
+                  // Вопрос № 9
+                  function bark() {
+                      console.log("Woof!")
+                  }
 
-            // Вопрос № 9
-            function bark() {
-                console.log("Woof!")
-            }
+                  bark.animal = "dog"
 
-            bark.animal = "dog"
+                  console.log(bark.animal)
 
-            console.log(bark.animal)
 
 
+                  // Вопрос № 10
+                  function Person(firstName, lastName) {
+                      this.firstName = firstName
+                      this.lastName = lastName
+                  }
 
-            // Вопрос № 10
-            function Person(firstName, lastName) {
-                this.firstName = firstName
-                this.lastName = lastName
-            }
+                  const person = new Person("John", "Smith")
+                  Person.getFullName = function () {
+                      return `${this.firstName} ${this.lastName}`
+                  }
 
-            const person = new Person("John", "Smith")
-            Person.getFullName = function () {
-                return `${this.firstName} ${this.lastName}`
-            }
+                  console.log(person.getFullName())
 
-            console.log(person.getFullName())
 
+                  // Вопрос № 11
+                  function Person(firstName, lastName) {
+                      this.firstName = firstName
+                      this.lastName = lastName
+                  }
 
-            // Вопрос № 11
-            function Person(firstName, lastName) {
-                this.firstName = firstName
-                this.lastName = lastName
-            }
+                  const john = new Person("John", "Smith")
+                  const jane = Person("Jane", "Air")
 
-            const john = new Person("John", "Smith")
-            const jane = Person("Jane", "Air")
+                  console.log(john)
+                  console.log(jane)
 
-            console.log(john)
-            console.log(jane)
 
+                  // Вопрос № 12
+                  function sum(a, b) {
+                      return a + b
+                  }
 
-            // Вопрос № 12
-            function sum(a, b) {
-                return a + b
-            }
+                  console.log(sum(1, "2"))
 
-            console.log(sum(1, "2"))
 
 
+                  // Вопрос № 13
+                  let number = 0
+                  console.log(number++)
+                  console.log(++number)
+                  console.log(number)
 
-            // Вопрос № 13
-            let number = 0
-            console.log(number++)
-            console.log(++number)
-            console.log(number)
 
+                  // Вопрос № 14 - Теговый шаблон - – это функция, которая позволяет разбирать шаблонную строку
+                  function getPersonInfo(one, two, three) {
+                      console.log(one)
+                      console.log(two)
+                      console.log(three)
+                  }
 
-            // Вопрос № 14 - Теговый шаблон - – это функция, которая позволяет разбирать шаблонную строку
-            function getPersonInfo(one, two, three) {
-                console.log(one)
-                console.log(two)
-                console.log(three)
-            }
+                  const person = "John"
+                  const age = 30
 
-            const person = "John"
-            const age = 30
+                  getPersonInfo`${person} is ${age} years old`
 
-            getPersonInfo`${person} is ${age} years old`
 
 
+                  // Вопрос № 15
+                  function checkAge(data) {
+                      if (data === { age: 18 }) {
+                          console.log("Ты взрослый!")
+                      } else if (data == { age: 18 }) {
+                          console.log("Ты по-прежнему взрослый.")
+                      } else {
+                          console.log("Хм... У тебя что, нет возраста?")
+                      }
+                  }
 
-            // Вопрос № 15
-            function checkAge(data) {
-                if (data === { age: 18 }) {
-                    console.log("Ты взрослый!")
-                } else if (data == { age: 18 }) {
-                    console.log("Ты по-прежнему взрослый.")
-                } else {
-                    console.log("Хм... У тебя что, нет возраста?")
-                }
-            }
+                  checkAge({ age: 18 })
 
-            checkAge({ age: 18 })
 
 
+                  // Вопрос № 16
+                  function getAge(...args) {
+                      console.log(typeof args)
+                  }
 
-            // Вопрос № 16
-            function getAge(...args) {
-                console.log(typeof args)
-            }
+                  getAge(30)
 
-            getAge(30)
 
 
 
+                  // Вопрос № 17
+                  function getAge() {
+                      "use strict"
+                      age = 30
+                      console.log(age)
+                  }
 
-            // Вопрос № 17
-            function getAge() {
-                "use strict"
-                age = 30
-                console.log(age)
-            }
+                  getAge()
 
-            getAge()
 
 
 
+                  // Вопрос № 18
+                  const sum = eval("10*10+5")
 
-            // Вопрос № 18
-            const sum = eval("10*10+5")
+                  console.log(sum)
 
-            console.log(sum)
 
 
 
+                  // Вопрос № 19
+                  var num = 8
+                  var num = 10
 
-            // Вопрос № 19
-            var num = 8
-            var num = 10
+                  console.log(num)
 
-            console.log(num)
 
 
+                  // Вопрос № 20
+                  const obj = { 1: "a", 2: "b", 3: "c" }
+                  const set = new Set([1, 2, 3, 4, 5])
 
-            // Вопрос № 20
-            const obj = { 1: "a", 2: "b", 3: "c" }
-            const set = new Set([1, 2, 3, 4, 5])
+                  console.log(obj.hasOwnProperty("1"))
+                  console.log(obj.hasOwnProperty(1))
+                  console.log(set.has("1"))
+                  console.log(set.has(1))
 
-            console.log(obj.hasOwnProperty("1"))
-            console.log(obj.hasOwnProperty(1))
-            console.log(set.has("1"))
-            console.log(set.has(1))
 
 
 
 
+                  // Вопрос № 21
+                  const obj = { a: "one", b: "two", a: "three" }
+                  console.log(obj)
 
-            // Вопрос № 21
-            const obj = { a: "one", b: "two", a: "three" }
-            console.log(obj)
 
 
+                  // Вопрос № 22
+                  for (let i = 1; i < 5; i++) {
+                      if (i === 3) continue
+                      console.log(i)
+                  }
 
-            // Вопрос № 22
-            for (let i = 1; i < 5; i++) {
-                if (i === 3) continue
-                console.log(i)
-            }
 
 
+                  // Вопрос № 23
+                  String.prototype.giveMePizza = () => {
+                      return "Give me pizza!"
+                  }
 
-            // Вопрос № 23
-            String.prototype.giveMePizza = () => {
-                return "Give me pizza!"
-            }
+                  const name = "John"
 
-            const name = "John"
+                  console.log(name.giveMePizza())
 
-            console.log(name.giveMePizza())
 
 
+                  // Вопрос № 24
+                  const a = {}
+                  const b = { key: "b" }
+                  const c = { key: "c" }
 
-            // Вопрос № 24
-            const a = {}
-            const b = { key: "b" }
-            const c = { key: "c" }
+                  a[b] = 123
+                  a[c] = 456
 
-            a[b] = 123
-            a[c] = 456
+                  console.log(a[b])
 
-            console.log(a[b])
 
 
+                  // Вопрос № 25
+                  const foo = () => console.log("first")
+                  const bar = () => setTimeout(() => console.log("second"))
+                  const baz = () => console.log("third")
 
-            // Вопрос № 25
-            const foo = () => console.log("first")
-            const bar = () => setTimeout(() => console.log("second"))
-            const baz = () => console.log("third")
+                  bar()
+                  foo()
+                  baz()
 
-            bar()
-            foo()
-            baz()
 
 
+                  // Вопрос № 26
+                  <div onclick="console.log('div')">
+                      <p onclick="console.log('p')">
+                      Нажми меня!
+                  </p>
+                  </div>
 
-            // Вопрос № 26
-            <div onclick="console.log('div')">
-                <p onclick="console.log('p')">
-                Нажми меня!
-            </p>
-            </div>
 
 
+                  // Вопрос № 27
+                  const person = { name: "John" }
 
-            // Вопрос № 27
-            const person = { name: "John" }
+                  function sayHi(age) {
+                      console.log(`${this.name} is ${age}`)
+                  }
 
-            function sayHi(age) {
-                console.log(`${this.name} is ${age}`)
-            }
+                  sayHi.call(person, 30)
+                  sayHi.bind(person, 30)
 
-            sayHi.call(person, 30)
-            sayHi.bind(person, 30)
 
 
+                  // Вопрос № 28
+                  function sayHi() {
+                      return (() => 0)()
+                  }
 
-            // Вопрос № 28
-            function sayHi() {
-                return (() => 0)()
-            }
+                  console.log(typeof sayHi())
 
-            console.log(typeof sayHi())
 
 
+                  // Вопрос № 29
+                  console.log(typeof typeof 1)
 
-            // Вопрос № 29
-            console.log(typeof typeof 1)
 
 
+                  // Вопрос № 30
+                  const numbers = [1, 2, 3]
+                  numbers[10] = 11
+                  console.log(numbers)
 
-            // Вопрос № 30
-            const numbers = [1, 2, 3]
-            numbers[10] = 11
-            console.log(numbers)
 
 
+                  // Вопрос № 31
+                  (() => {
+                      let x, y
+                      try {
+                          throw new Error()
+                      } catch (x) {
+                          (x = 1), (y = 2)
+                          console.log(x)
+                      }
+                      console.log(x)
+                      console.log(y)
+                  })()
 
-            // Вопрос № 31
-            (() => {
-                let x, y
-                try {
-                    throw new Error()
-                } catch (x) {
-                    (x = 1), (y = 2)
-                    console.log(x)
-                }
-                console.log(x)
-                console.log(y)
-            })()
 
 
+                  // Вопрос № 32
+                  const result =
+                      [[0, 1], [2, 3]].reduce(
+                          (acc, cur) => {
+                              return acc.concat(cur)
+                          },
+                          [1, 2]
+                      )
 
-            // Вопрос № 32
-            const result =
-                [[0, 1], [2, 3]].reduce(
-                    (acc, cur) => {
-                        return acc.concat(cur)
-                    },
-                    [1, 2]
-                )
+                  console.log(result)
 
-            console.log(result)
 
 
+                  // Вопрос № 33
+                  console.log(!!null)
+                  console.log(!!"")
+                  console.log(!!1)
 
-            // Вопрос № 33
-            console.log(!!null)
-            console.log(!!"")
-            console.log(!!1)
 
 
+                  // Вопрос № 34
+                  console.log([..."John"])
 
-            // Вопрос № 34
-            console.log([..."John"])
 
+                  // Вопрос № 35
+                  function* generator(i) {
+                      yield i
+                      yield i * 2
+                  }
 
-            // Вопрос № 35
-            function* generator(i) {
-                yield i
-                yield i * 2
-            }
+                  const gen = generator(10)
 
-            const gen = generator(10)
+                  console.log(gen.next().value)
+                  console.log(gen.next().value)
 
-            console.log(gen.next().value)
-            console.log(gen.next().value)
 
 
+                  // Вопрос № 36
+                  const firstPromise = new Promise((res, rej) => {
+                      setTimeout(res, 500, "one")
+                  })
 
-            // Вопрос № 36
-            const firstPromise = new Promise((res, rej) => {
-                setTimeout(res, 500, "one")
-            })
+                  const secondPromise = new Promise((res, rej) => {
+                      setTimeout(res, 100, "two")
+                  })
 
-            const secondPromise = new Promise((res, rej) => {
-                setTimeout(res, 100, "two")
-            })
+                  Promise.race([firstPromise, secondPromise]).then(res => console.log(res))
 
-            Promise.race([firstPromise, secondPromise]).then(res => console.log(res))
 
 
 
+                  // Вопрос № 37
+                  let person = { name: "John" }
+                  const members = [person]
+                  person = null
 
-            // Вопрос № 37
-            let person = { name: "John" }
-            const members = [person]
-            person = null
+                  console.log(members)
 
-            console.log(members)
 
+                  // Вопрос № 38
+                  const person = {
+                      name: "John",
+                      age: 30
+                  }
 
-            // Вопрос № 38
-            const person = {
-                name: "John",
-                age: 30
-            }
+                  for (const item in person) {
+                      console.log(item)
+                  }
 
-            for (const item in person) {
-                console.log(item)
-            }
 
+                  // Вопрос № 39
+                  console.log(3 + 4 + "5")
 
-            // Вопрос № 39
-            console.log(3 + 4 + "5")
 
+                  // Вопрос № 40
+                  const num = parseInt("7*6", 10)
 
-            // Вопрос № 40
-            const num = parseInt("7*6", 10)
+                  console.log(num)
 
-            console.log(num)
 
 
+                  // Вопрос № 41
+                  const result =
+                      [1, 2, 3].map(num => {
+                          if (typeof num === "number") return
+                          return num * 2
+                      })
 
-            // Вопрос № 41
-            const result =
-                [1, 2, 3].map(num => {
-                    if (typeof num === "number") return
-                    return num * 2
-                })
+                  console.log(result)
 
-            console.log(result)
 
 
 
+                  // Вопрос № 42
+                  function greeting() {
+                      throw "Всем привет!"
+                  }
 
-            // Вопрос № 42
-            function greeting() {
-                throw "Всем привет!"
-            }
+                  function sayHi() {
+                      try {
+                          const data = greeting()
+                          console.log("Работает!", data)
+                      } catch (error) {
+                          console.log("Ошибка: ", error)
+                      }
+                  }
 
-            function sayHi() {
-                try {
-                    const data = greeting()
-                    console.log("Работает!", data)
-                } catch (error) {
-                    console.log("Ошибка: ", error)
-                }
-            }
+                  sayHi()
 
-            sayHi()
 
 
 
+                  // Вопрос № 43
+                  function Car() {
+                      this.make = "Lamborghini"
+                      return { make: "Maserati" }
+                  }
 
-            // Вопрос № 43
-            function Car() {
-                this.make = "Lamborghini"
-                return { make: "Maserati" }
-            }
+                  const myCar = new Car()
+                  console.log(myCar.make)
 
-            const myCar = new Car()
-            console.log(myCar.make)
 
 
+                  // Вопрос № 44
+                  (() => {
+                      let x = (y = 10)
+                  })()
 
-            // Вопрос № 44
-            (() => {
-                let x = (y = 10)
-            })()
+                  console.log(typeof x)
+                  console.log(typeof y)
 
-            console.log(typeof x)
-            console.log(typeof y)
 
 
+                  // Вопрос № 45
+                  class Dog {
+                      constructor(name) {
+                          this.name = name
+                      }
+                  }
 
-            // Вопрос № 45
-            class Dog {
-                constructor(name) {
-                    this.name = name
-                }
-            }
+                  Dog.prototype.bark = function() {
+                      console.log(`Woof I am ${this.name}`)
+                  }
 
-            Dog.prototype.bark = function() {
-                console.log(`Woof I am ${this.name}`)
-            }
+                  const pet = new Dog("Rex")
 
-            const pet = new Dog("Rex")
+                  pet.bark()
 
-            pet.bark()
+                  delete Dog.prototype.bark
 
-            delete Dog.prototype.bark
+                  pet.bark()
 
-            pet.bark()
 
 
 
+                  // Вопрос № 46
+                  const set = new Set([1, 1, 2, 3, 4])
 
-            // Вопрос № 46
-            const set = new Set([1, 1, 2, 3, 4])
+                  console.log(set)
 
-            console.log(set)
 
 
 
+                  // Вопрос № 47
+                  let counter = 10
+                  export default counter
 
-            // Вопрос № 47
-            let counter = 10
-            export default counter
+                  import myCounter from "./counter.js"
 
-            import myCounter from "./counter.js"
+                  myCounter += 1
 
-            myCounter += 1
+                  console.log(myCounter)
 
-            console.log(myCounter)
 
 
+                  // Вопрос № 49
+                  const name = "John"
+                  age = 30
 
-            // Вопрос № 49
-            const name = "John"
-            age = 30
+                  console.log(delete name)
+                  console.log(delete age)
 
-            console.log(delete name)
-            console.log(delete age)
 
 
+                  // Вопрос № 49
+                  const numbers = [1, 2, 3, 4, 5]
+                  const [y] = numbers
 
-            // Вопрос № 49
-            const numbers = [1, 2, 3, 4, 5]
-            const [y] = numbers
+                  console.log(y)
 
-            console.log(y)
 
 
+                  // Вопрос № 50
+                  const user = { name: "John", age: 30 }
+                  const admin = { admin: true, ...user }
 
-            // Вопрос № 50
-            const user = { name: "John", age: 30 }
-            const admin = { admin: true, ...user }
-
-            console.log(admin)
+                  console.log(admin)
     </script>
   </body>
 </html>
