@@ -71,7 +71,7 @@
       console.log(b === s);
       //true false false
 
-      // Вопрос № 7
+      // Вопрос № 7 ========================
       class Chameleon {
         static colorChange(newColor) {
           this.newColor = newColor;
@@ -84,13 +84,15 @@
       }
 
       const freddie = new Chameleon({ newColor: 'pink' });
-      freddie.colorChange('orange');
+      freddie.colorChange('orange'); // не является функцией. static- не наследуется екземпляру класса
+      //Error
 
       // Вопрос № 8...............
       // обратите внимание: код выполняется в нестрогом режиме
       let greeting;
       greetign = {}; // опечатка!
       console.log(greetign);
+      // {}
 
       // Вопрос № 9
       function bark() {
@@ -100,6 +102,7 @@
       bark.animal = 'dog';
 
       console.log(bark.animal);
+      //dog мы не обращаемся к функции
 
       // Вопрос № 10
       function Person(firstName, lastName) {
@@ -109,10 +112,12 @@
 
       const person = new Person('John', 'Smith');
       Person.getFullName = function () {
+        // не является функцией
         return `${this.firstName} ${this.lastName}`;
       };
 
       console.log(person.getFullName());
+      // Error
 
       // Вопрос № 11
       function Person(firstName, lastName) {
