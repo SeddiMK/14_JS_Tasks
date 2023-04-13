@@ -37,7 +37,10 @@
         diameter() {
           return this.radius * 2;
         },
-        perimeter: () => 2 * Math.PI * this.radius,
+        perimeter: () => {
+          //console.log(this.radius);
+          return 2 * Math.PI * this.radius;
+        },
       };
 
       console.log(shape.diameter());
@@ -45,8 +48,9 @@
       //20 NaN
 
       // Вопрос № 4
-      console.log(+true);
-      console.log(!'John');
+      console.log(+true); // 1
+      console.log(+false); // 0
+      console.log(!'John'); // false
 
       // Вопрос № 5
       let c = { greeting: 'Hey!' };
@@ -55,15 +59,17 @@
       d = c;
       c.greeting = 'Hello!';
       console.log(d.greeting);
+      // Hello!
 
       // Вопрос № 6
       let a = 3;
-      let b = new Number(3);
+      let b = new Number(3); // typeOf object
       let s = 3;
 
       console.log(a == b);
       console.log(a === b);
       console.log(b === s);
+      //true false false
 
       // Вопрос № 7
       class Chameleon {
