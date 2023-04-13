@@ -10,6 +10,10 @@
     <title>Document</title>
   </head>
   <body>
+    <div onclick="console.log('div')">
+      <p onclick="console.log('p')">Нажми меня!</p>
+    </div>
+    ;
     <script>
       // Вопрос № 1
       function sayHi() {
@@ -128,8 +132,9 @@
       const john = new Person('John', 'Smith');
       const jane = Person('Jane', 'Air');
 
-      console.log(john);
-      console.log(jane);
+      console.log(john); //Person {firstName: 'John', lastName: 'Smith'}
+      console.log(jane); //Undefined
+      // Person {firstName: "John", lastName: "Smith"} и undefined
 
       // Вопрос № 12
       function sum(a, b) {
@@ -137,12 +142,14 @@
       }
 
       console.log(sum(1, '2'));
+      //12
 
       // Вопрос № 13
       let number = 0;
       console.log(number++);
       console.log(++number);
       console.log(number);
+      //0 2 2
 
       // Вопрос № 14 - Теговый шаблон - – это функция, которая позволяет разбирать шаблонную строку
       function getPersonInfo(one, two, three) {
@@ -155,6 +162,7 @@
       const age = 30;
 
       getPersonInfo`${personName} is ${age} years old`;
+      //(3) ['', ' is ', ' years old', raw: Array(3)] ;John; 30
 
       // Вопрос № 15
       function checkAge(data) {
@@ -168,6 +176,7 @@
       }
 
       checkAge({ age: 18 });
+      // 'Хм... У тебя что, нет возраста?'
 
       // Вопрос № 16
       function getAge(...args) {
@@ -175,6 +184,7 @@
       }
 
       getAge(30);
+      //object
 
       // Вопрос № 17
       function getAge() {
@@ -184,17 +194,20 @@
       }
 
       getAge();
+      // Error
 
       // Вопрос № 18
       const sumN = eval('10*10+5');
 
       console.log(sumN);
+      //105
 
       // Вопрос № 19
       var num = 8;
       var num = 10;
 
       console.log(num);
+      // 10
 
       // Вопрос № 20
       const obj = { 1: 'a', 2: 'b', 3: 'c' };
@@ -204,16 +217,19 @@
       console.log(obj.hasOwnProperty(1));
       console.log(set.has('1'));
       console.log(set.has(1));
+      //true true false true
 
       // Вопрос № 21
       const obj1 = { a: 'one', b: 'two', a: 'three' };
       console.log(obj1);
+      //{a: 'three', b: 'two'}
 
       // Вопрос № 22
       for (let i = 1; i < 5; i++) {
         if (i === 3) continue;
         console.log(i);
       }
+      //1,2,4
 
       // Вопрос № 23
       String.prototype.giveMePizza = () => {
@@ -223,6 +239,7 @@
       const name = 'John';
 
       console.log(name.giveMePizza());
+      // Give me pizza!
 
       // Вопрос № 24
       const a1 = {};
@@ -233,6 +250,12 @@
       a1[c1] = 456;
 
       console.log(a1[b1]);
+      // 			В JavaScript ключи объектов всегда преобразуются в строки. В предоставленном вами коде объекты b1 и c1 используются в качестве ключей для присвоения значений объекту a1. Однако, поскольку b1 и c1 являются объектами, они будут неявно преобразованы в строки с помощью метода toString().
+
+      // Когда b1 и c1 преобразуются в строки, они оба приводят к одному и тому же строковому значению «[object Object]». Следовательно, первое присвоение a1[b1] = 123 перезаписывается вторым присвоением a1[c1] = 456.
+
+      // В результате, когда вы попытаетесь получить доступ к a1[b1] позже, он вернет значение, связанное с последним назначенным ключом, то есть 456. Вот почему код выводит 456 на консоль.
+      // 456
 
       // Вопрос № 25
       const foo = () => console.log('first');
@@ -242,13 +265,13 @@
       bar();
       foo();
       baz();
+      // first third second
 
       // Вопрос № 26
       // <div onclick="console.log('div')">
-      //     <p onclick="console.log('p')">
-      //     Нажми меня!
-      // </p>
-      // </div>
+      //   <p onclick="console.log('p')">Нажми меня!</p>
+      // </div>;
+      //  p div
 
       // Вопрос № 27
       const person1 = { name: 'John' };
@@ -257,8 +280,9 @@
         console.log(`${this.name} is ${age}`);
       }
 
-      sayHi.call(person1, 30);
-      sayHi.bind(person1, 30);
+      sayHi.call(person1, 30); // John is 30
+      sayHi.bind(person1, 30); // sayHi(age) {console.log(`${this.name} is ${age}`);}
+      //
 
       // Вопрос № 28
       function sayHi() {
@@ -266,27 +290,31 @@
       }
 
       console.log(typeof sayHi());
+      //number
 
       // Вопрос № 29
       console.log(typeof typeof 1);
+      //string
 
       // Вопрос № 30
       const numbers = [1, 2, 3];
       numbers[10] = 11;
-      console.log(numbers)(
-        // Вопрос № 31
-        () => {
-          let x, y;
-          try {
-            throw new Error();
-          } catch (x) {
-            (x = 1), (y = 2);
-            console.log(x);
-          }
+      console.log(numbers);
+      //[1, 2, 3, пусто × 7, 11]
+
+      // Вопрос № 31
+      (() => {
+        let x, y;
+        try {
+          throw new Error();
+        } catch (x) {
+          (x = 1), (y = 2);
           console.log(x);
-          console.log(y);
         }
-      )();
+        console.log(x);
+        console.log(y);
+      })();
+      //
 
       // Вопрос № 32
       const result = [
