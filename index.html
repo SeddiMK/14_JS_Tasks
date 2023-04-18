@@ -349,6 +349,7 @@
       console.log([...'John']); // ['J', 'o', 'h', 'n']
 
       // Вопрос № 35
+      // function* (ключевое слово function со звёздочкой) определяет функцию-генератор.
       function* generator(i) {
         yield i;
         yield i * 2;
@@ -356,8 +357,10 @@
 
       const gen = generator(10);
 
-      console.log(gen.next().value);
-      console.log(gen.next().value);
+      console.log(gen.next().value); // 10 идет вызов до первого  yield
+      console.log(gen.next().value); // 20 идет вызов до второго  yield
+      console.log(gen.next().value); // undefindet идет вызов до третьего  yield(который не определен)
+      // 10 20
 
       // Вопрос № 36
       const firstPromise = new Promise((res, rej) => {
@@ -368,16 +371,19 @@
         setTimeout(res, 100, 'two');
       });
 
-      Promise.race([firstPromise, secondPromise]).then((res) =>
-        console.log(res)
+      Promise.race([firstPromise, secondPromise]).then(
+        (res) => console.log(res) //  two
       );
-
+      //two
       // Вопрос № 37
       let person2 = { name: 'John' };
       const members = [person2];
+
       person2 = null;
 
-      console.log(members);
+      console.log(person2); // null
+      console.log(members); // [{ name: "John" }]
+      // [{ name: "John" }]
 
       // Вопрос № 38
       const person3 = {
@@ -386,33 +392,39 @@
       };
 
       for (const item in person3) {
-        console.log(item);
+        console.log(item); //
       }
+      // name age
 
       // Вопрос № 39
       console.log(3 + 4 + '5');
+      // '75'
 
       // Вопрос № 40
-      const num3 = parseInt('7*6', 10);
+      const num3 = parseInt('7*6', 10); // второй аргумент 10- система исчисления 10 ричная, 16ти ричная
 
       console.log(num3);
+      // console.log(parseInt('7*6')); // 7 преобразует строку в число до первой ошибки- *
+      //7
 
       // Вопрос № 41
       const result1 = [1, 2, 3].map((num) => {
-        if (typeof num === 'number') return;
+        if (typeof num === 'number') return; // true
         return num * 2;
       });
 
       console.log(result1);
+      //[undefined, undefined, undefined]
 
       // Вопрос № 42
       function greeting1() {
         throw 'Всем привет!';
       }
+      console.log(greeting1());
 
       function sayHi() {
         try {
-          const data = greeting1();
+          const data = greeting1(); // инструкции после throw не будут выполнены, и управление будет передано в первый блок catch
           console.log('Работает!', data);
         } catch (error) {
           console.log('Ошибка: ', error);
@@ -420,6 +432,7 @@
       }
 
       sayHi();
+      // Ошибка:  Всем привет!
 
       // Вопрос № 43
       function Car() {
@@ -428,15 +441,17 @@
       }
 
       const myCar = new Car();
-      console.log(myCar.make)(
-        // Вопрос № 44
-        () => {
-          let x = (y = 10);
-        }
-      )();
+      console.log(myCar.make);
+      // 'Maserati'
 
-      console.log(typeof x);
-      console.log(typeof y);
+      // Вопрос № 44
+      (() => {
+        let x = (y = 10);
+      })();
+
+      console.log(typeof x); // 'number'
+      console.log(typeof y); // 'number'
+      //
 
       // Вопрос № 45
       class Dog {
@@ -451,16 +466,18 @@
 
       const pet = new Dog('Rex');
 
-      pet.bark();
+      pet.bark(); // Woof I am Rex
 
       delete Dog.prototype.bark;
 
-      pet.bark();
+      pet.bark(); // Ошибка
+      // Woof I am Rex Ошибка
 
       // Вопрос № 46
-      const set4 = new Set([1, 1, 2, 3, 4]);
+      const set4 = new Set([1, 1, 2, 3, 4]); // Set является коллекцией уникальных значений.
 
-      console.log(set4);
+      console.log(set4); //  {1, 2, 3, 4}
+      //
 
       // Вопрос № 47
       let counter1 = 10;
@@ -470,26 +487,26 @@
 
       myCounter += 1;
 
-      console.log(myCounter);
+      console.log(myCounter); // возникает ошибка myCounter доступен только для чтения(export default counter1)  и не может быть изменен
 
       // Вопрос № 49
       const name5 = 'John';
       age5 = 30;
 
-      console.log(delete name5);
-      console.log(delete age5);
+      console.log(delete name5); // false Оператор delete возвращает логическое значение: true при успешном удалении, иначе - false
+      console.log(delete age5); //  true Оператор delete возвращает логическое значение: true при успешном удалении, иначе - false
 
       // Вопрос № 49
       const numbers = [1, 2, 3, 4, 5];
       const [y] = numbers;
 
-      console.log(y);
+      console.log(y); // 1
 
       // Вопрос № 50
       const user = { name: 'John', age: 30 };
       const admin = { admin: true, ...user };
 
-      console.log(admin);
+      console.log(admin); // { admin: true, name: "John", age: 30 } Оператор распространения или расширения (spread, ...) позволяет объединять объекты - создавать копии пар ключ/значение одного объекта и добавлять их в другой объект.
     </script>
   </body>
 </html>
