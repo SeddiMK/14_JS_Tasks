@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 3424212314;
+      console.log(num);
+      // ✅ get first digit of number as string
+      const firstDigitStr = String(num)[0];
+      console.log(firstDigitStr); // 👉️ 3
+      console.log(typeof firstDigitStr); // 👉️ string
+      console.log('==========================');
+
+      // ✅ get last digit of number as string
+
+      let lastDigitStr = String(num);
+      console.log(lastDigitStr[lastDigitStr.length - 1]); // 👉️ 4
+      console.log(typeof lastDigitStr); // 👉️ string
+      console.log('==========================');
+      // ✅ get first digit of number as integer
+      const firstDigitNum = Number(firstDigitStr);
+      const lastDigitNum = Number(lastDigitStr[lastDigitStr.length - 1]);
+      console.log(firstDigitNum); // 👉️ 1
+      console.log(lastDigitNum); // 👉️ 1
+      console.log(typeof firstDigitNum); // 👉️ number
+    </script>
+  </body>
+</html>
