@@ -10,10 +10,70 @@
     <script>
       // Дан массив со строками. Оставьте в этом массиве только те строки, которые начинаются на http://.
       console.log('========================');
+      const arr1 = [
+        'axxasx.as',
+        '	we	wq	qw	w',
+        'w	qwedaxz',
+        'http://djakslda.da',
+        'w	qwedaxz',
+        'http://djakslda.da',
+      ];
+      const newArr1 = [];
+
+      // arr1.forEach(function (el) {
+      //   if (el.includes('http://')) {
+      //     newArr1.push(el);
+      //   }
+      // });
+      // console.log(newArr1);
+      console.log(searchText(arr1, 'htp://'));
       // Дан массив со строками. Оставьте в этом массиве только те строки, которые заканчиваются на .html.
       console.log('========================');
+      const arr2 = [
+        'axxasx.as',
+        '	we	wq	qw	w',
+        'w	qwedaxz.html',
+        'http://djakslda.da',
+        'w	qwedaxz',
+        'http://djakslda.da',
+        'w	qwedaxz',
+        'djakslda.da.html',
+        'w	qwedaxz',
+        'djakslda.da',
+      ];
+      const newArr2 = [];
+
+      // arr2.forEach(function (el) {
+      //   if (el.includes('.html')) {
+      //     newArr2.push(el);
+      //   }
+      // });
+      //console.log(newArr2);
+
+      function searchText(arr, text) {
+        let newArr = [];
+        arr.forEach(function (el) {
+          if (el.includes(text)) {
+            newArr.push(el);
+          }
+        });
+        if (newArr.length === 0) {
+          console.log('Символов "' + text + '" нет в массиве ');
+        }
+        return newArr;
+      }
+      console.log(searchText(arr2, '.html'));
       // Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
       console.log('========================');
+
+      const arr3 = [3, 7, , 5, 32, 12, 8];
+
+      const newArr3 = [];
+      arr3.forEach((el) => {
+        let num = el * 0.1 + el;
+        newArr3.push(num);
+      });
+      console.log(newArr3);
     </script>
   </body>
 </html>
