@@ -7,6 +7,52 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // Найдите сумму всех целых чисел от 1 до 100.
+      let myArr = [];
+
+      for (let i = 1; i <= 10; i++) {
+        myArr.push(i);
+      }
+      console.log(myArr);
+      console.log('========================');
+      const sumElArr = myArr.reduce((a, b) => a + b);
+      console.log(sumElArr);
+      // Найдите сумму всех целых четных чисел в промежутке от 1 до 100.
+      console.log('========================');
+      const evenOnly = myArr.filter(function (n) {
+        const remainder = n % 2;
+
+        return remainder === 0;
+      });
+      console.log(evenOnly);
+
+      const sumEvenOnlyElArr = evenOnly.reduce((a, b) => a + b);
+      console.log(sumEvenOnlyElArr);
+      // Найдите сумму всех целых нечетных чисел в промежутке от 1 до 100.
+      console.log('========================');
+
+      const notEvenOnly = myArr.filter(function (n) {
+        const remainder = n % 2;
+
+        return remainder !== 0;
+      });
+      console.log(notEvenOnly);
+      const sumNotEvenOnlyElArr = notEvenOnly.reduce((a, b) => a + b);
+      console.log(sumNotEvenOnlyElArr);
+      // Даны два целых числа. Найдите остаток от деления первого числа на второе.
+      console.log('========================');
+      let num1 = 7;
+      let num2 = 3;
+
+      console.log(num1 % num2);
+
+      // Дана некоторая строка. Переберите и выведите в консоль по очереди все символы с конца строки.
+      console.log('========================');
+      const str1 = 'sdadsadasdq';
+      for (let i = 0; i <= str1.length; i++) {
+        console.log(str1[str1.length - i]);
+      }
+    </script>
   </body>
 </html>
