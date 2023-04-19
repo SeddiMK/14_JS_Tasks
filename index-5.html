@@ -7,6 +7,45 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // Получите массив букв этой строки.
+      const str1 = 'abcde';
+      const arr1 = [...str1];
+
+      console.log(Array.from(str1));
+      console.log(arr1);
+
+      // Получите массив цифр этого числа.
+      console.log('========================');
+
+      const num1 = 12345;
+
+      console.log(Array.from(String(num1), Number));
+
+      // Переверните его: 54321
+      console.log('========================');
+
+      const num2 = 12345;
+
+      const reverseNum = function reversedNum(num) {
+        return (
+          parseFloat(num.toString().split('').reverse().join('')) *
+          Math.sign(num) // Math.sign - (защита) Если в нее передано положительное число, функция возвращает 1, если отрицательное - -1, если передан ноль (или выражение, вычисляющееся в ноль) - то 0
+        );
+      };
+      console.log(reverseNum(num2));
+
+      // Найдите сумму цифр этого числа.
+      console.log('========================');
+
+      const num3 = 12345;
+      const arr4 = Array.from(String(num3), Number);
+      console.log(arr4);
+
+      let numSum = 0;
+      arr4.forEach((num) => (numSum += num));
+
+      console.log(numSum);
+    </script>
   </body>
 </html>
