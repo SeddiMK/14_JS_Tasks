@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Дан массив с числами. Найдите сумму квадратов элементов этого массива.
+      function getMultiples(integer, limit) {
+        let multiples = [];
+
+        for (let i = integer; i <= limit; i = i + integer) {
+          multiples.push(i);
+        }
+        console.log(multiples);
+        return multiples;
+      }
+      getMultiples(2, 8); //returns [2, 4, 6, 8]
+      getMultiples(5, 20); //returns [5, 10, 15, 20]
+      // Дан массив с числами. Найдите сумму квадратных корней элементов этого массива.
+      // console.log('========================');
+      // Дан массив с числами. Найдите сумму положительных элементов этого массива.
+      // console.log('========================');
+      // Дан массив с числами. Найдите сумму тех элементов этого массива, которые больше нуля и меньше десяти.
+      // console.log('========================');
+    </script>
+  </body>
+</html>
