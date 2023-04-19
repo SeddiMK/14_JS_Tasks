@@ -29,6 +29,7 @@
       // Выведите в консоль все четные числа из промежутка от 1 до 100. // number % 2 === 0
       // Выведите в консоль все числа кратные трем в промежутке от 1 до 100.
 
+      // Решение через рекурсия + замыкание - очень много условий
       //   let min = Math.ceil(2);
       //   let max = Math.ceil(30);
       //   let par = Math.ceil(1); // четность 0 -
@@ -57,6 +58,79 @@
       //     return step();
       //   }
       //
+
+      // Решение через массив
+
+      let myArr = [];
+
+      for (let i = 1; i <= 30; i++) {
+        myArr.push(i);
+      }
+      console.log(myArr);
+      console.log('========================');
+      evenArr();
+      notEvenArr();
+      multiples(5);
+
+      function evenArr() {
+        let nArr = [];
+        for (let i = 0; i < myArr.length; i++) {
+          if (i % 2 !== 0) {
+            // index is even
+            nArr.push(myArr[i]);
+          }
+        }
+        console.log(nArr);
+      }
+      function notEvenArr() {
+        let nArr = [];
+        for (let i = 0; i < myArr.length; i++) {
+          if (i % 2 === 0) {
+            // index is even
+            nArr.push(myArr[i]);
+          }
+        }
+        console.log(nArr);
+      }
+      function multiples(n) {
+        if (n < 0) return 0;
+        let nArr = [];
+        for (let i = n - 1; i <= myArr.length; i = i + n) {
+          if (i % n !== 0) {
+            // index is even
+            nArr.push(myArr[i]);
+          }
+        }
+        console.log(nArr);
+      }
+      console.log('==========================');
+
+      function getMultiples(integer, limit) {
+        let multiples = [];
+
+        for (let i = integer; i <= limit; i = i + integer) {
+          multiples.push(i);
+        }
+        console.log(multiples);
+        return multiples;
+      }
+      getMultiples(2, 8); //returns [2, 4, 6, 8]
+      getMultiples(5, 20); //returns [5, 10, 15, 20]
+      console.log('=========== filter ===============');
+      // const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const evenOnly = myArr.filter(function (n) {
+        const remainder = n % 2;
+
+        return remainder === 0;
+      });
+      const notEvenOnly = myArr.filter(function (n) {
+        const remainder = n % 3;
+
+        return remainder === 0;
+      });
+      console.log(evenOnly);
+      console.log(notEvenOnly);
     </script>
   </body>
 </html>
