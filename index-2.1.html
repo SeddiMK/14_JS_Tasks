@@ -47,6 +47,19 @@
         sum += arr2[i];
       }
       console.log(sum);
+
+      // Убрать отрицательные числа из массива.
+      console.log('========================');
+      const arr3 = [-3, 0, 6, -1, 5, -3, 3, 8, -1, -2, 8, 2];
+
+      for (let i = 0; i < arr3.length; i++) {
+        if (arr3[i] < 0) {
+          arr3.splice(i, 1);
+          i--;
+        }
+      }
+
+      console.log(arr3);
     </script>
   </body>
 </html>
