@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Дана некоторая строка. Найдите позицию первого нуля в строке.
+      console.log('========================');
+      const str1 = 'lpsskadksaodasdsadasasasddasd';
+      const newStr1 = Array.from(str1);
+      console.log(newStr1);
+
+      if (newStr1.indexOf('0') === -1) {
+        // console.log('Символов "' + text + '" нет в строке');
+        console.log('Символов "0" нет в строке');
+      } else {
+        console.log(newStr1.indexOf('0'));
+      }
+
+      // function searchFirstText(arr, text) {
+      //   let index;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (arr[i].includes(text)) return (index = i);
+      //   }
+      //   if (index) {
+      //     return console.log(index);
+      //   } else {
+      //     console.log('Символов "' + text + '" нет в строке');
+      //   }
+      //   return 0;
+      // }
+      // console.log(searchFirstText(newStr1, '0'));
+      // console.log();
+
+      // Найдите сумму первой половины элементов этого массива.
+      console.log('========================');
+
+      const arr2 = [1, 2, 3, 4, 5, 6];
+    </script>
+  </body>
+</html>
