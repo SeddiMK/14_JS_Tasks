@@ -39,7 +39,14 @@
       // Найдите сумму первой половины элементов этого массива.
       console.log('========================');
 
-      const arr2 = [1, 2, 3, 4, 5, 6];
+      const arr2 = [1, 2, 4, 5, 5, 3, 3, 4, 5, 6];
+      console.log(arr2);
+
+      let sum = 0;
+      for (let i = 0; i < arr2.length / 2; i++) {
+        sum += arr2[i];
+      }
+      console.log(sum);
     </script>
   </body>
 </html>
