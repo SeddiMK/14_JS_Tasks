@@ -10,17 +10,57 @@
     <script>
       // Заполните массив случайными числами из промежутка от 1 до 100.
       console.log('========================');
-
       const arr1 = [];
+      for (let i = 1; i <= 100; i++) {
+        arr1[i - 1] = getRandomInt(1, 99);
+      }
 
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      console.log(arr1);
       // Выведите в консоль все его символы с конца.
       console.log('========================');
 
-      const num = 12345;
+      const num = 1233423456577;
+
+      const reverseN = function reverseNum(n) {
+        return (strNumRev = String(n)
+          .split('')
+          .reverse()
+          .join()
+          .replaceAll(',', ''));
+      };
+      console.log(reverseN(num));
       // По очереди выведите в консоль подмассивы из двух элементов нашего массива: [1, 2] [3, 4] [5, 6]
       console.log('========================');
 
-      const arr3 = [1, 2, 3, 4, 5, 6];
+      const arr3 = [1, 2, 3, 4, 5, 6, 3, 3, 3];
+      console.log(arr3);
+      let arr3_1 = [];
+      let arr3_2 = [];
+      let arr3_3 = [];
+      // Array.prototype.subarray = function (start, end) {
+      //   if (!end) {
+      //     end = -1;
+      //   }
+      //   return this.slice(start, this.length + 1 - end * -1);
+      // };
+
+      function crachArr(arr, newArr1, newArr2, newArr3, lenNewArr) {
+        newArr1 = arr.slice(0, lenNewArr);
+        arr3_1 = newArr1;
+        newArr2 = arr.slice(lenNewArr, lenNewArr * 2);
+        arr3_2 = newArr2;
+        newArr3 = arr.slice(-lenNewArr, arr.length);
+        arr3_3 = newArr3;
+      }
+      crachArr(arr3, arr3_1, arr3_2, arr3_3, 3);
+      console.log(arr3_1);
+      console.log(arr3_2);
+      console.log(arr3_3);
     </script>
   </body>
 </html>
