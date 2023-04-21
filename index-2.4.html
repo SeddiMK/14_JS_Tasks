@@ -10,7 +10,13 @@
     <script>
       // Дана некоторая строка с буквами и цифрами. Получите позицию первой цифры в этой строке.
       console.log('========================');
-      const str1 = 'lk3jjk4jlj7l8';
+      const str1 = 'l1k3jjk4jlj7l8';
+      console.log(str1);
+
+      let firstDigit = str1.match(/\d/); // will give you the first digit in the string
+
+      let indexed = str1.indexOf(firstDigit);
+      console.log(indexed);
       // Дан объект с ключами и значениями. Запишите в первый массив ключи объекта, а во второй - значения.
       console.log('========================');
       // Дано число. Выведите в консоль количество четных цифр в этом числе.
