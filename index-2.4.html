@@ -8,6 +8,7 @@
   </head>
   <body>
     <script>
+      let log = console.log;
       // Дана некоторая строка с буквами и цифрами. Получите позицию первой цифры в этой строке.
       console.log('========================');
       const str1 = 'l1k3jjk4jlj7l8';
@@ -19,14 +20,65 @@
       console.log(indexed);
       // Дан объект с ключами и значениями. Запишите в первый массив ключи объекта, а во второй - значения.
       console.log('========================');
+      const obj2 = {
+        name: 'Max',
+        age: '33',
+        male: 'Male',
+      };
+      const arrKey2 = [];
+      const arrVal2 = [];
+      console.log(obj2);
+      //to get values
+      for (let value of Object.values(obj2)) {
+        arrVal2.push(value);
+      }
+      console.log(arrVal2);
+      //to get keys
+      for (let keys of Object.keys(obj2)) {
+        arrKey2.push(keys);
+      }
+      console.log(arrKey2);
       // Дано число. Выведите в консоль количество четных цифр в этом числе.
       console.log('========================');
+      const num3 = 87284922;
+      console.log(num3);
+      const arrNum3 = Array.from(String(num3)).map((i) => Number(i));
+      let count3 = 0;
+      for (let i = 0; i <= arrNum3.length; i++) {
+        if (arrNum3[i] % 2 == 0) {
+          count3++;
+          console.log(arrNum3[i]);
+        }
+      }
+      log(count3);
       // Переведите в верхний регистр все нечетные буквы этой строки. В нашем случае должно получится следующее: 'AbCdE'
       console.log('========================');
       const str4 = 'abcde';
+      log(str4);
+      const str4Arr = str4.split('');
+      log(str4Arr);
+      for (let i = 0; i < str4Arr.length; i++) {
+        if (i % 2) str4Arr[i] = str4Arr[i].toLowerCase();
+        else str4Arr[i] = str4Arr[i].toUpperCase();
+      }
+      log(str4Arr);
+      const newStr4 = str4Arr.join('');
+      console.log(newStr4);
+
       // Сделайте заглавным первый символ каждого слова в этой строке. В нашем случае должно получится следующее: 'Aaa Bbb Ccc'
       console.log('========================');
-      const str5 = 'aaa bbb ccc';
+      const str5 = 'aaa bbb ccc kjds';
+      log(str5);
+      const str5Arr = str5.split(' ');
+      log(str5Arr);
+      let newStr5 = [];
+      str5Arr.map((el) => {
+        // log(el.replace(el[0][0], el[0][0].toUpperCase()));
+        newStr5.push(el.replace(el[0][0], el[0][0].toUpperCase()));
+      });
+
+      log(newStr5);
+      console.log(newStr5.join(' '));
     </script>
   </body>
 </html>
