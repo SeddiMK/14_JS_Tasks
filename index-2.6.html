@@ -10,7 +10,7 @@
     <script>
       // Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
       console.log('========================');
-      const str1 = 'h123hkjh34k657';
+      const str1 = 'h1234hkjh34k657';
       console.log(str1);
       // function posNum(str) {
       //   const arrPos = [];
@@ -21,21 +21,25 @@
       const arrPos = [];
       const arrStr1 = Array.from(str1);
 
-      const serchNumArr = arrStr1.forEach((el) => {
-        isNumber(el);
-      });
-
-      arrStr1.forEach((el) => {
-        if (isNumber(el)) {
-          let indexEl = arrStr1.indexOf(el);
-          arrPos.push(indexEl);
-        }
-      });
+      // const serchNumArr = arrStr1.forEach((el) => {
+      //   isNumber(el);
+      // });
 
       function isNumber(n) {
         return !isNaN(Number(n));
       }
-      console.log(arrStr1);
+      const indexEl = arrStr1.map((el, idx) => {
+        // console.log(`Index of ${el} is ${idx}`);
+        return idx;
+      });
+      arrStr1.forEach((el) => {
+        if (isNumber(el)) {
+          const index = arrStr1.indexOf(el);
+          console.log(index);
+          arrPos.push(index);
+        }
+      });
+      console.log(arrPos);
       // arrStr1.forEach((el) => {
       //   // let isFound = el.includes(value);
       //   console.log(arrStr1.indexOf(el));
