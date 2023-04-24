@@ -7,6 +7,61 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
+      console.log('========================');
+      const str1 = 'h234hkjh34k657';
+      console.log(str1);
+      // function posNum(str) {
+      //   const arrPos = [];
+      //   // str.replace(/[^0-9,\s]/g, '');
+
+      //   return arrPos;
+      // }
+      const arrPos = [];
+      const arrStr1 = Array.from(str1);
+
+      // arr.forEach((item) => {
+      //   isNumber(item);
+      // });
+
+      // function isNumber(n) {
+      //   return !isNaN(Number(n));
+      // }
+      // arrStr1.forEach((el) => {
+      //   // let isFound = el.includes(value);
+      //   if (!isNaN(Number(el)) {
+      //     arrPos.push(indexOf(el));
+      //   }
+      // });
+
+      // console.log(posNum(str1));
+      console.log(
+        arrStr1.map((value) => {
+          return !isNaN(value);
+        })
+      );
+
+      // Напишите код, который перевернет числа в этом массиве по следующему принципу: [321, 654, 987]
+      console.log('========================');
+      const arr2 = [123, 456, 789];
+      console.log(arr2);
+      // Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее: '1 234 567'
+      console.log('========================');
+      const str3 = '1234567';
+      console.log(str3);
+      // Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее: 'aBcDe'
+      console.log('========================');
+      const str4 = 'AbCdE';
+      console.log(str4);
+      // Слейте пары элементов вместе: [12, 34, 56]
+      console.log('========================');
+      const arr5 = [1, 2, 3, 4, 5, 6];
+      console.log(arr5);
+      // Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
+      console.log('========================');
+      const str6 = 'aaa bbb ccc eee fff';
+      console.log(str6);
+    </script>
   </body>
 </html>
