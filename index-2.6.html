@@ -10,58 +10,18 @@
     <script>
       // Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
       console.log('========================');
-      const str1 = 'h1234hkjh34k657';
+      const str1 = '1h124hыв234аыk3kапвав5645';
       console.log(str1);
-      // function posNum(str) {
-      //   const arrPos = [];
-      //   // str.replace(/[^0-9,\s]/g, '');
 
-      //   return arrPos;
-      // }
       const arrPos = [];
-      const arrStr1 = Array.from(str1);
 
-      // const serchNumArr = arrStr1.forEach((el) => {
-      //   isNumber(el);
-      // });
-
-      function isNumber(n) {
-        return !isNaN(Number(n));
-      }
-      const indexEl = arrStr1.map((el, idx) => {
-        // console.log(`Index of ${el} is ${idx}`);
-        return idx;
-      });
-      arrStr1.forEach((el) => {
-        if (isNumber(el)) {
-          const index = arrStr1.indexOf(el);
-          console.log(index);
-          arrPos.push(index);
+      for (let i = 0; i <= str1.length; i++) {
+        if (!isNaN(Number(str1[i]))) {
+          console.log(!isNaN(Number(str1[i])));
+          arrPos.push(i);
         }
-      });
+      }
       console.log(arrPos);
-      // arrStr1.forEach((el) => {
-      //   // let isFound = el.includes(value);
-      //   console.log(arrStr1.indexOf(el));
-      //   if (!isNaN(Number(el))) {
-      //     let indexEl = arrStr1.indexOf(el);
-      //     arrPos.push(indexEl);
-      //   }
-      // });
-
-      // console.log(
-      //   arrStr1.map((value) => {
-      //     return !isNaN(value);
-      //   })
-      // );
-      // for (let i = 0; i <= arrStr1.length; i++) {
-      //   console.log(!isNaN(Number(i)));
-      //   // if (!isNaN(Number(i))) {
-      //   //   let indexEl = arrStr1.indexOf(i);
-      //   //   arrPos.push(indexEl);
-      //   // }
-      // }
-      // console.log(arrPos);
       // Напишите код, который перевернет числа в этом массиве по следующему принципу: [321, 654, 987]
       console.log('========================');
       const arr2 = [123, 456, 789];
