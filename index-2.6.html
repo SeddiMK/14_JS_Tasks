@@ -17,7 +17,7 @@
 
       for (let i = 0; i <= str1.length; i++) {
         if (!isNaN(Number(str1[i]))) {
-          console.log(!isNaN(Number(str1[i])));
+          // console.log(!isNaN(Number(str1[i])));
           arrPos.push(i);
         }
       }
@@ -26,6 +26,17 @@
       console.log('========================');
       const arr2 = [123, 456, 789];
       console.log(arr2);
+      const reverseNum = function reversedNum(num) {
+        return (
+          parseFloat(num.toString().split('').reverse().join('')) *
+          Math.sign(num) // Math.sign - (защита) Если в нее передано положительное число, функция возвращает 1, если отрицательное - -1, если передан ноль (или выражение, вычисляющееся в ноль) - то 0
+        );
+      };
+      const newArr2 = [];
+      arr2.forEach((el) => {
+        newArr2.push(reverseNum(el));
+      });
+      console.log(newArr2);
       // Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее: '1 234 567'
       console.log('========================');
       const str3 = '1234567';
