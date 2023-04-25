@@ -28,9 +28,74 @@
       console.log(arr2);
       let arr3New = arr1.concat(arr2);
       arr3New[arr3New.length] = arr3New[2];
-      let removed = arr3New.splice(2, 1);
-
+      // let removed = arr3New.splice(2, 1);
       console.log(arr3New);
+      // Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.
+      console.log('========================');
+      let num4 = 23145678;
+      console.log(num4);
+      let num4Str = Array.from(String(num4));
+      let num4New;
+      let num4NewBubbl = String(bubbleSort(num4Str));
+      console.log('Sort bubble ' + num4NewBubbl.replace(/,/g, ''));
+
+      // Пузырьковая сортировка
+      function bubbleSort(array) {
+        let done = false;
+        while (!done) {
+          done = true;
+          for (let i = 1; i < array.length; i += 1) {
+            if (array[i - 1] > array[i]) {
+              done = false;
+              let tmp = array[i - 1];
+              array[i - 1] = array[i];
+              array[i] = tmp;
+            }
+          }
+        }
+
+        return array;
+      }
+
+      num4New = String(num4Str.sort());
+      console.log(
+        typeof num4New.replace(/,/g, '') +
+          ' ' +
+          'Metod .sort Massive ' +
+          num4New.replace(/,/g, '')
+      );
+      console.log(Number(num4New.replace(/,/g, '')));
+      // Удалите из массива все пустые строки.
+      console.log('========================');
+      let arr5 = [1, '', 2, 3, '', 5];
+      console.log(arr5);
+      let arr5New = [];
+      let filtered = arr5.filter(function (el) {
+        return el != '';
+      });
+      let filteredMap = arr5.map((el) => {
+        if (el != '') {
+          arr5New.push(el);
+        }
+      });
+      console.log(arr5New);
+      console.log(filtered);
+      // Отсортируйте элементы в каждом подмассиве.
+      console.log('========================');
+      let arr6 = [
+        [2, 1, 4, 3, 5],
+        [3, 5, 2, 4, 1],
+        [4, 3, 1, 5, 2],
+      ];
+      console.log(arr6);
+      // console.log(arr6New);
+      // Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+      console.log('========================');
+      let arr7 = [1, 2, 3];
+      let arr7_1 = [1, 2, 3, 4, 5];
+      console.log(arr7);
+      console.log(arr7_1);
+      // console.log(arr7New);
     </script>
   </body>
 </html>
