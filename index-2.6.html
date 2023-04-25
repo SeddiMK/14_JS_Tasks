@@ -93,8 +93,24 @@
       console.log(arr5New);
       // Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
       console.log('========================');
-      const str6 = 'aaa bbb ccc eee fff';
+      const str6 = 'aaa bbb ccc eee fff ppp jkj jhgf hgfddse tkjjcrt';
       console.log(str6);
+
+      const str6Arr = str6.split(' ');
+      console.log(str6Arr);
+      let newStr6 = [];
+      for (let i = 0; i < str6Arr.length; i++) {
+        if (i % 2 !== 0) {
+          // log(el.replace(el[0][0], el[0][0].toUpperCase()));
+          newStr6.push(
+            str6Arr[i].replace(str6Arr[i][0][0], str6Arr[i][0][0].toUpperCase())
+          );
+        } else {
+          newStr6.push(str6Arr[i]);
+        }
+      }
+
+      console.log(newStr6);
     </script>
   </body>
 </html>
