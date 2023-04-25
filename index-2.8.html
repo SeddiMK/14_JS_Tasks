@@ -67,7 +67,7 @@
       console.log(Number(num4New.replace(/,/g, '')));
       // Удалите из массива все пустые строки.
       console.log('========================');
-      let arr5 = [1, '', 2, 3, '', 5];
+      let arr5 = [1, '', 2, 3, '', 5, 4, ''];
       console.log(arr5);
       let arr5New = [];
       let filtered = arr5.filter(function (el) {
@@ -88,12 +88,26 @@
         [4, 3, 1, 5, 2],
       ];
       console.log(arr6);
-      // console.log(arr6New);
+      arr6.forEach((el) => {
+        return el.sort(); // Сортирует на месте  и возвращает отсортированный массив.
+      });
+      let arr6New = arr6;
+      console.log(arr6New);
       // Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
       console.log('========================');
       let arr7 = [1, 2, 3];
-      let arr7_1 = [1, 2, 3, 4, 5];
+      let arr7_1 = [7, 24, 5, 6, 89, 76, 5, 4];
       console.log(arr7);
+      function delElArr(arr1, arr2) {
+        let lengthArr = arr2.length - arr1.length;
+        for (let i = 0; i <= lengthArr; i += 1) {
+          if (arr2.length !== arr1.length) {
+            arr2.pop();
+          }
+        }
+        console.log(lengthArr);
+      }
+      delElArr(arr7, arr7_1);
       console.log(arr7_1);
       // console.log(arr7New);
     </script>
