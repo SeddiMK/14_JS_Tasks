@@ -10,7 +10,27 @@
     <script>
       // Удалите из этой строки все подстроки, в которых количество символов больше трех. В нашем случае должно получится следующее: '1 22 333 22 1'
       console.log('========================');
-      const str2 = '1 22 333 4444 22 5555 1';
+      const str2 = '1 22 333 4444 22 5555 32 32131 234 11 1';
+      const str2Arr = str2.split(' ');
+      console.log(str2Arr);
+      let str2New = [];
+      for (let i = 0; i < str2Arr.length; i++) {
+        if (str2Arr[i].length <= 3) {
+          str2New.push(str2Arr[i]);
+        }
+      }
+      console.log(str2New);
+      // Слейте эти массивы в новый массив следующим образом: [1, 2, 'a', 'b', 'c', 3]
+      console.log('========================');
+      let arr1 = [1, 2, 3];
+      let arr2 = ['a', 'b', 'c'];
+      console.log(arr1);
+      console.log(arr2);
+      let arr3New = arr1.concat(arr2);
+      arr3New[arr3New.length] = arr3New[2];
+      let removed = arr3New.splice(2, 1);
+
+      console.log(arr3New);
     </script>
   </body>
 </html>
