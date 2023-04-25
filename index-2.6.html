@@ -39,16 +39,58 @@
       console.log(newArr2);
       // Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее: '1 234 567'
       console.log('========================');
-      const str3 = '1234567';
+      let str3 = '1234567';
       console.log(str3);
+
+      function separateDigits(num) {
+        // Convert the number to a string
+        let str = num.toString();
+
+        // Split the string into an array of characters and reverse it
+        let arr = str.split('').reverse();
+
+        // Use a loop to insert a space after every third character
+        for (let i = 3; i < arr.length; i += 3) {
+          arr[i] += ' ';
+        }
+        // Reverse the array again and join it into a string
+        let result = arr.reverse().join('');
+
+        return result;
+      }
+      let num = 12345673543543545380;
+      let separated = separateDigits(num);
+      let separated2 = separateDigits(str3);
+      console.log(separated); // "123 456 789"
+      console.log(separated2); // "123 456 789"
+
       // Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее: 'aBcDe'
       console.log('========================');
-      const str4 = 'AbCdE qeqeqw';
-      console.log(str4[6]);
+      const str4 = 'AbCdEwwwqVhVCGHJ';
+      console.log(str4);
+      let str4New = '';
+      for (let i = 0; i < str4.length; i++) {
+        if (str4[i] == str4[i].toUpperCase()) {
+          str4New += str4[i].toLowerCase();
+        } else {
+          str4New += str4[i].toUpperCase();
+        }
+      }
+      console.log(str4New);
       // Слейте пары элементов вместе: [12, 34, 56]
       console.log('========================');
       const arr5 = [1, 2, 3, 4, 5, 6];
       console.log(arr5);
+      let arr5New = [];
+      for (let i = 0; i < arr5.length; i++) {
+        if (i % 2 !== 0) {
+          let arrMin = [].concat(arr5[i - 1], arr5[i]);
+          arrMin = arrMin.join('');
+          arr5New.push(arrMin);
+          arr5New = arr5New.map(Number);
+        }
+      }
+      console.log(arr5New);
       // Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
       console.log('========================');
       const str6 = 'aaa bbb ccc eee fff';
