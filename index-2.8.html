@@ -123,10 +123,10 @@
 
       // console.log(arr7New);
     </script>
-    <div id="div"></div>
-    <p id="p">Привет</p>
+    <!-- <div id="div"></div>
+    <p id="p">Привет</p> -->
     <script>
-      div.appendChild(p);
+      // div.appendChild(p);
       // p.appendChild(div); // Ошибка новый дочерний элемент имеет родительский (div)
     </script>
     <p id="elem">Привет, мир!</p>
@@ -142,7 +142,16 @@
     <p id="p">Привет</p>
     <script>
       div.appendChild(p);
-      div.appendChild(p);
+      // div.appendChild(p);
+    </script>
+    <div id="outer">
+      <div id="inner"></div>
+    </div>
+    <script>
+      console.log(document.querySelector('#outer #inner'));
+      // console.log(document.getElementById('#outer').getElementById('#inner'));
+      console.log(document.querySelector('#outer').children[0]);
+      // console.log(document.getElementById('#outer').firstChild);
     </script>
   </body>
 </html>
