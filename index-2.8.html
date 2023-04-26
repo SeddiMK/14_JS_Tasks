@@ -123,5 +123,26 @@
 
       // console.log(arr7New);
     </script>
+    <div id="div"></div>
+    <p id="p">Привет</p>
+    <script>
+      div.appendChild(p);
+      // p.appendChild(div); // Ошибка новый дочерний элемент имеет родительский (div)
+    </script>
+    <p id="elem">Привет, мир!</p>
+
+    <script>
+      elem.outerHTML = 'Прощай, жестокий мир!';
+      // console.log(elem.outerHTML);
+      var input = document.createElement('input');
+      input.setAttribute('checked', 'checked');
+      console.log(input.checked);
+    </script>
+    <div id="div"></div>
+    <p id="p">Привет</p>
+    <script>
+      div.appendChild(p);
+      div.appendChild(p);
+    </script>
   </body>
 </html>
