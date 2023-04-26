@@ -109,8 +109,16 @@
       }
       delElArr(arr7, arr7_1);
       console.log(arr7_1);
-      arr7_1.forEach((el, ind) => {
-        console.log(ind, el);
+      console.log('========================');
+      let arr8 = ['adad', 'ghwt3rew', '2342435', 'sdf', 44234];
+      console.log(arr8);
+      arr8.forEach((el, ind) => {
+        if (el === Number(el)) {
+          console.log(ind, 'Number ' + el);
+        }
+        if (el === String(el)) {
+          console.log(ind, 'String ' + el);
+        }
       });
 
       // console.log(arr7New);
