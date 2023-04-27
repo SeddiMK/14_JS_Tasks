@@ -24,6 +24,44 @@
       const resolve = fetch(url);
       const response = resolve.then((response) => response.json());
       const posts = response.then((post) => console.log(post));
+      console.log('======================================');
+      // Function diclaration
+      // Можно вызвать влюбом месте кода
+      // Если екранировать в блоке(if{}), то функция будет работать только после кода. Исключение строгий режим 'use strict', нигде работать не будет
+
+      // 'use strict';
+      // if (true) {
+      //   function f1() {
+      //     console.log('Сработало if');
+      //   }
+      // } else {
+      //   function f1() {
+      //     console.log('Сработало else');
+      //   }
+      // }
+      // f1(); // Работает если нет 'use strict'
+
+      // Function expression (выражение)
+      // Т.к. f3- переменная, то можно с ней проводить любые операции как с переменной(сложение, вычитание, *,)
+      function f2() {
+        console.log('Сработало f2 ======');
+      }
+      f2();
+      // f3(); // не сработает
+      const f3 = function () {
+        console.log('Сработало f3 ++++++');
+      };
+      f3();
+
+      const f4 = f3;
+
+      console.log(f4 === f3); // true
+
+      const f5 = function example() {
+        console.log('Сработала example ---------');
+      };
+      f5();
+      // example(); // не работает. example не найдено
     </script>
   </body>
 </html>
