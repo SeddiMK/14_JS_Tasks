@@ -7,6 +7,18 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // Асинхронная функция всегда возвращает промис
+      //'https://jsonplaceholder.typicode.com/todos/1'
+
+      // fetch('https://jsonplaceholder.typicode.com/todos/1')
+      // .then(response => response.json())
+      // .then(json => console.log(json))
+
+      const url = 'https://jsonplaceholder.typicode.com/todos/1';
+      const resolve = fetch(url);
+      const response = resolve.then((response) => response.json());
+      const posts = response.then((post) => console.log(post));
+    </script>
   </body>
 </html>
