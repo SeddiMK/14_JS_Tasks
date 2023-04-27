@@ -8,6 +8,11 @@
   </head>
   <body>
     <script>
+      // Макрозадачи - все задачи Асинхронные выполняемые браузером script, mousemove, setTimeout, setInterval
+      // Микрозадачи - все задачи выполняемы со временем из вне, dytiyt jnlftn jndtn Promise, MutationObserver: наблюдатель за изменениями, asinc function
+      // У микрозадач приоритет выше чем у макрозадач. Если обе задачи прилетят одновременно, то сначало выполняется микрозадача
+
+      // ===========================================================
       // Асинхронная функция всегда возвращает промис
       //'https://jsonplaceholder.typicode.com/todos/1'
 
@@ -15,7 +20,7 @@
       // .then(response => response.json())
       // .then(json => console.log(json))
 
-      const url = 'https://jsonplaceholder.typicode.com/todos/1';
+      const url = 'https://jsonplaceholder.typicode.com/users/10';
       const resolve = fetch(url);
       const response = resolve.then((response) => response.json());
       const posts = response.then((post) => console.log(post));
