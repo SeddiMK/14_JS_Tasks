@@ -42,25 +42,28 @@
       // f1(); // Работает если нет 'use strict'
 
       // Function expression (выражение)
-      // Т.к. f3- переменная, то можно с ней проводить любые операции как с переменной(сложение, вычитание, *,)
+      // Т.к. f3- переменная, то можно с ней проводить любые операции как с переменной(сложение, вычитание, * , / )
       function f2() {
         console.log('Сработало f2 ======');
       }
       f2();
       // f3(); // не сработает
       const f3 = function () {
-        console.log('Сработало f3 ++++++');
+        return 'Сработало f3 ++++++';
       };
-      f3();
 
+      console.log(f3());
       const f4 = f3;
 
       console.log(f4 === f3); // true
-
-      const f5 = function example() {
-        console.log('Сработала example ---------');
+      console.log('----------------------------');
+      const f5 = function example(a) {
+        console.log(f5.name);
+        console.log(example.name);
+        console.log(this.name);
+        console.log('Сработала example ---------' + a);
       };
-      f5();
+      f5(87987899);
       // example(); // не работает. example не найдено
     </script>
   </body>
