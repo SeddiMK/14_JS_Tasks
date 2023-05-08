@@ -31,7 +31,7 @@
       const URL = 'https://jsonplaceholder.typicode.com';
       const postData = '/posts/1';
 
-      async function jsonPlaceHolder() {
+      const asyncFn = async function jsonPlaceHolder() {
         // Если нужно передать данные в fetch
         // const formData = new FormData();
         const formData = JSON.stringify({
@@ -71,9 +71,9 @@
         let title = await resolve.title;
         console.log(title);
         // return title;
-      }
+      };
       // jsonPlaceHolder();
-      console.log(jsonPlaceHolder());
+      console.log(asyncFn());
 
       console.log('======================================');
       // Что выводит этот фрагмент кода?
