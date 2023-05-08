@@ -21,10 +21,10 @@
       //   .then((response) => response.json())
       //   .then((json) => console.log(json));
 
-      const url = 'https://jsonplaceholder.typicode.com/users/10';
-      const resolve = fetch(url);
-      const response = resolve.then((response) => response.json());
-      const posts = response.then((post) => console.log(post));
+      // const url = 'https://jsonplaceholder.typicode.com/users/10';
+      // const resolve = fetch(url);
+      // const response = resolve.then((response) => response.json());
+      // const posts = response.then((post) => console.log(post));
 
       console.log('======================================');
 
@@ -32,16 +32,23 @@
         let response = await fetch(
           'https://jsonplaceholder.typicode.com/posts/10'
         );
-        let posts = await response.json();
-        let body = posts.body;
-        // console.log(comments);
-        return posts;
+        console.log(response);
+        if (!response.ok) {
+          const message = 'Error:' + response.status;
+          throw new Error(message);
+        }
+        let resolve = await response.json();
+        console.log(response);
+        let posts = await response.posts;
+        // let body = posts.body;
+        return response;
       }
       // jsonPlaceHolder();
       console.log(jsonPlaceHolder());
 
       console.log('======================================');
       // Что выводит этот фрагмент кода?
+      // Очередность синхронного и асинхронного. Асинхронного- микрозадача и макрозадача
       console.log('start');
 
       const promise1 = Promise.resolve().then(() => {
