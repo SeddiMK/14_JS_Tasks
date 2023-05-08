@@ -29,7 +29,7 @@
       console.log('======================================');
 
       const URL = 'https://jsonplaceholder.typicode.com';
-      const dataPost = '/posts/1';
+      const postData = '/posts/1';
 
       async function jsonPlaceHolder() {
         // Если нужно передать данные в fetch
@@ -52,23 +52,25 @@
         //     body: formData, // вносим изменения в fetch
         //   }
         // );
-        let response = await fetch(URL + dataPost, {
+        let response = await fetch(URL + postData, {
           method: 'PUT',
           body: formData, // вносим изменения в fetch
           headers: {
             'Content-type': 'application/json; charset=UTF-8',
           },
         });
+
         console.log(response);
+
         if (!response.ok) {
           const message = 'Error:' + response.status;
           throw new Error(message);
         }
         let resolve = await response.json();
         console.log(resolve);
-        // let posts = await response.posts;
-        // let body = posts.body;
-        return resolve;
+        let title = await resolve.title;
+        console.log(title);
+        // return title;
       }
       // jsonPlaceHolder();
       console.log(jsonPlaceHolder());
