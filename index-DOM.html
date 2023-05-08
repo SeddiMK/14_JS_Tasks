@@ -6,5 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
   </head>
-  <body></body>
+  <body>
+    <div class="div-proba"></div>
+    <script>
+      let p = document.createElement('p');
+      document.body.insertBefore(p, document.querySelector('.div-proba'));
+
+      p.textContent = 'Здесь какой-то текст';
+      p.classList.add('par', 'border--orange');
+
+      const orange = (document.querySelector('.border--orange').style.cssText =
+        'border: 1px solid orange');
+
+      console.log(p);
+    </script>
+  </body>
 </html>
