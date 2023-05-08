@@ -28,20 +28,47 @@
 
       console.log('======================================');
 
+      const URL = 'https://jsonplaceholder.typicode.com';
+      const dataPost = '/posts/1';
+
       async function jsonPlaceHolder() {
-        let response = await fetch(
-          'https://jsonplaceholder.typicode.com/posts/10'
-        );
+        // Если нужно передать данные в fetch
+        // const formData = new FormData();
+        const formData = JSON.stringify({
+          id: 1,
+          title: 'fooddd',
+          body: 'bar',
+          userId: 1,
+        });
+
+        // formData.append('lenght', 4);
+        // formData.append('city', 'Da Nang');
+        // formData.append('id', 68);
+
+        // let response = await fetch(
+        //   'https://jsonplaceholder.typicode.com/posts/10',
+        //   {
+        //     method: 'POST',
+        //     body: formData, // вносим изменения в fetch
+        //   }
+        // );
+        let response = await fetch(URL + dataPost, {
+          method: 'PUT',
+          body: formData, // вносим изменения в fetch
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        });
         console.log(response);
         if (!response.ok) {
           const message = 'Error:' + response.status;
           throw new Error(message);
         }
         let resolve = await response.json();
-        console.log(response);
-        let posts = await response.posts;
+        console.log(resolve);
+        // let posts = await response.posts;
         // let body = posts.body;
-        return response;
+        return resolve;
       }
       // jsonPlaceHolder();
       console.log(jsonPlaceHolder());
