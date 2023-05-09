@@ -56,9 +56,11 @@
         // four4.style.background = 'blue';
         console.log('=============================');
         let div = two.querySelector('div');
-        let child = div.childNodes; // включая пробелы и переносы
+        let child = div.childNodes; // узлы, текст,  включая пробелы и переносы
+        let link = document.querySelector('a');
 
-        console.log(div.firstChild);
+        console.log(link.parentElement.nextElementSibling);
+        console.log(link.parentElement.prevElementSibling);
       </script>
     </section>
   </body>
