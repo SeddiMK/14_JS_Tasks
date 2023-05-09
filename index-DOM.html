@@ -11,7 +11,8 @@
       <div class="div-proba"></div>
       <script>
         let p = document.createElement('p');
-        document.body.insertBefore(p, document.querySelector('.div-proba'));
+        let section1 = document.querySelector('.one');
+        section1.insertBefore(p, document.querySelector('.div-proba'));
 
         p.textContent = 'Здесь какой-то текст';
         p.classList.add('par', 'border--orange');
@@ -30,11 +31,25 @@
       </div>
       <div class="block">2</div>
       <div class="block">3</div>
-      <div id="four-4" class="block">
+      <div id="four4" class="block">
         4
-        <p class="block__text">paragr 4</p>
+        <p class="block__text">paragr_4</p>
       </div>
-      <script></script>
+      <script>
+        let two = document.querySelector('.two');
+        let div = two.querySelectorAll('div');
+        // let div4 = document.getElementById('four-4');
+        let div4 = document.querySelector('#four4');
+        let pDiv4 = div4.querySelector('p');
+
+        // let pDiv1 = two.querySelector('div').querySelector('p');
+        let pDiv1 = two.querySelector('div p');
+
+        div[2].style.background = 'green';
+        four4.style.background = 'blue';
+
+        console.log(pDiv1);
+      </script>
     </section>
   </body>
 </html>
