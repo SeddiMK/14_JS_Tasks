@@ -26,8 +26,10 @@
     </section>
     <section class="two">
       <div class="block">
-        1
+        one-text
         <p class="block__text"></p>
+        <span>prim span</span>
+        <a href="#">link a</a>
       </div>
       <div class="block">2</div>
       <div class="block">3</div>
@@ -37,18 +39,26 @@
       </div>
       <script>
         let two = document.querySelector('.two');
-        let div = two.querySelectorAll('div');
-        // let div4 = document.getElementById('four-4');
-        let div4 = document.querySelector('#four4');
-        let pDiv4 = div4.querySelector('p');
 
-        // let pDiv1 = two.querySelector('div').querySelector('p');
-        let pDiv1 = two.querySelector('div p');
+        // let div = two.querySelectorAll('div');
+        // let div = two.getElementsByTagName('p');
 
-        div[2].style.background = 'green';
-        four4.style.background = 'blue';
+        // // let div4 = document.getElementById('four-4');
+        // let div4 = document.querySelector('#four4');
 
-        console.log(pDiv1);
+        // let pDiv4 = div4.querySelector('p');
+        // let pDiv4 = div4.getElementByClassName('block__text');
+
+        // // let pDiv1 = two.querySelector('div').querySelector('p');
+        // let pDiv1 = two.querySelector('div p');
+
+        // div[2].style.background = 'green';
+        // four4.style.background = 'blue';
+        console.log('=============================');
+        let div = two.querySelector('div');
+        let child = div.childNodes; // включая пробелы и переносы
+
+        console.log(div.firstChild);
       </script>
     </section>
   </body>
