@@ -7,18 +7,34 @@
     <title>DOM</title>
   </head>
   <body>
-    <div class="div-proba"></div>
-    <script>
-      let p = document.createElement('p');
-      document.body.insertBefore(p, document.querySelector('.div-proba'));
+    <section class="one">
+      <div class="div-proba"></div>
+      <script>
+        let p = document.createElement('p');
+        document.body.insertBefore(p, document.querySelector('.div-proba'));
 
-      p.textContent = 'Здесь какой-то текст';
-      p.classList.add('par', 'border--orange');
+        p.textContent = 'Здесь какой-то текст';
+        p.classList.add('par', 'border--orange');
 
-      const orange = (document.querySelector('.border--orange').style.cssText =
-        'border: 1px solid orange');
+        const orange = (document.querySelector(
+          '.border--orange'
+        ).style.cssText = 'border: 1px solid orange');
 
-      console.log(p);
-    </script>
+        console.log(p);
+      </script>
+    </section>
+    <section class="two">
+      <div class="block">
+        1
+        <p class="block__text"></p>
+      </div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+      <div id="four-4" class="block">
+        4
+        <p class="block__text">paragr 4</p>
+      </div>
+      <script></script>
+    </section>
   </body>
 </html>
