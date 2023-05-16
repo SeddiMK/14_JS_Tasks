@@ -28,24 +28,29 @@ console.log('=============================================');
 const section2 = document.querySelector('.task-2');
 const outArr2 = section2.querySelector('.arr-2');
 const inp2 = section2.querySelector('.inp-2');
+const inp2Ind = section2.querySelector('.inp-21');
 const btn2 = section2.querySelector('.btn-2');
 const out2 = section2.querySelector('.out-2');
 
 const a2 = [4, 't2', 'hh', 'dd', 4, 3, 54, `t12`, 67, 97, 't34'];
+console.log(inp2Ind);
+let arrStr2 = a2.map((el) => String(el));
+
 outArr2.textContent = '[ ' + a2 + ' ]';
 
 btn2.addEventListener('click', function () {
-  f2(a2);
+  f2(arrStr2);
 });
 
 function f2(arr) {
-  let arrStr = arr.map((el) => String(el));
-  let indArr = arrStr.indexOf(inp2.value);
-  if (indArr !== -1) {
-    out1.value = 'Index element = ' + indArr;
+  let inpValInd = inp2.value;
+  let indValStr = inp2Ind.value;
+  let inp = arr.indexOf(inpValInd, indValStr);
+  if (inp !== -1) {
+    out2.value = 'Index element = ' + inp;
   } else {
-    out1.value = 'Element its not defined';
+    out2.value = 'Element its not defined -1';
   }
 
-  console.log(indArr);
+  // console.log(inp);
 }
