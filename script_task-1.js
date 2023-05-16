@@ -23,5 +23,10 @@ function f1(arr) {
   }
 
   console.log(indArr);
-  z;
 }
+console.log('=============================================');
+const section2 = document.querySelector('.task-2');
+const outArr2 = section2.querySelector('.arr-2');
+const inp2 = section2.querySelector('.inp-2');
+const btn2 = section2.querySelector('.btn-2');
+const out2 = section2.querySelector('.out-2');
