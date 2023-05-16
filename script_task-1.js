@@ -30,3 +30,22 @@ const outArr2 = section2.querySelector('.arr-2');
 const inp2 = section2.querySelector('.inp-2');
 const btn2 = section2.querySelector('.btn-2');
 const out2 = section2.querySelector('.out-2');
+
+const a2 = [4, 't2', 'hh', 'dd', 4, 3, 54, `t12`, 67, 97, 't34'];
+outArr2.textContent = '[ ' + a2 + ' ]';
+
+btn2.addEventListener('click', function () {
+  f2(a2);
+});
+
+function f2(arr) {
+  let arrStr = arr.map((el) => String(el));
+  let indArr = arrStr.indexOf(inp2.value);
+  if (indArr !== -1) {
+    out1.value = 'Index element = ' + indArr;
+  } else {
+    out1.value = 'Element its not defined';
+  }
+
+  console.log(indArr);
+}
