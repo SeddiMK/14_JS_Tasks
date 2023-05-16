@@ -7,17 +7,60 @@
     <title>ArrMetods</title>
   </head>
   <body>
+    <section class="task-1">
+      <h4 class="arr-1"></h4>
+      <div class="blok-inp">
+        <input type="text" class="inp-1" />
+        <button class="btn-1">Task01</button>
+      </div>
+      <div class="blok-out">
+        <output class="out-1" type="text"></output>
+      </div>
+    </section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <section class="task-1"></section>
+    <style>
+      SECTION {
+        margin: 2rem 0 0.9rem 2rem;
+      }
+      INPUT {
+        margin-bottom: 0.9rem;
+        margin-right: 0.9rem;
+      }
+    </style>
+    <script src="script_task-1.js"></script>
     <script>
       // indexOf
-      const arr = [3, 5, 1, 7, 23];
+      const arr = [3, 5, 1, 7, 23, 5, 432];
+      const arrStr = ['Hi', 'Hello'];
       // -1 совпадение не найдено
-      console.log(arr.indexOf(4));
-      if (arr.indexOf(4) !== -1) {
-        console.log('Элемент в массиве присутствует');
-      } else {
-        console.log('Элемента нет в массиве');
+      // Привести к типу данных, который находится в массиве. Строгое сравнение. В строке учитывается регистр
+      console.table(arr);
+      console.log(arr.indexOf(5, 3));
+      // console.log(arrStr.indexOf('hi'));
+      // if (arr.indexOf(4) !== -1) {
+      //   console.log('Элемент в массиве присутствует');
+      // } else {
+      //   console.log('Элемента нет в массиве');
+      // }
+      // как работает indexOf
+      function indexOfEmul(arr, item, from = 0) {
+        for (let i = from; i < arr.length; i++) {
+          if (arr[i] === item) {
+            return i;
+          }
+        }
+        return -1;
       }
-      console.log('===================================');
+      console.log(indexOfEmul(arr, 5, 3));
+      console.log('==================================');
     </script>
   </body>
 </html>
