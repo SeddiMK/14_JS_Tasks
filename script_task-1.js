@@ -61,17 +61,14 @@ const outArr3 = document.querySelector('.arr-3');
 const a3 = [4, 't2', '33', 'dd', 4, 3, 54, `t12`, 67, 97, 't34'];
 
 let arrStr3 = a3.map((el) => String(el));
-let nSearch = 33;
 
 outArr3.textContent = '[ ' + a3 + ' ]';
 
 btn3.addEventListener('click', () => {
-  f6(arrStr3, nSearch);
+  f6(arrStr3, inp3.value);
 });
 function f6(arr, numSearch) {
-  let valInp = inp3.value;
-  console.log(arr.indexOf(valInp));
-  out3.textContent = arr.indexOf(valInp);
+  out3.textContent = indexOfEmul(arr, numSearch);
 }
 function indexOfEmul(arr, item, from = 0) {
   for (let i = from; i < arr.length; i++) {
