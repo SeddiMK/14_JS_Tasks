@@ -96,24 +96,26 @@ function f6() {
   let inpValInd = inp4.value;
   const quantityArr = [];
   let lastResult;
-  // while (lastResult !== -1) {
+  while (lastResult !== -1) {
+    lastResult = arr.indexOf(inpValInd, lastResult + 1);
+    if (lastResult !== -1) {
+      console.log(lastResult);
+      quantityArr.push(lastResult);
+    }
+  }
+
+  // for (let i = 0; i < arr.length; i++) {
   //   lastResult = arr.indexOf(inpValInd, lastResult + 1);
+
   //   if (lastResult !== -1) {
-  //     console.log(lastResult);
   //     quantityArr.push(lastResult);
+  //     // console.log(quantityArr);
+  //     out4.textContent = quantityArr;
+  //   } else {
+  //     return;
   //   }
   // }
 
-  for (let i = 0; i < arr.length; i++) {
-    lastResult = arr.indexOf(inpValInd, lastResult + 1);
-
-    if (lastResult !== -1) {
-      quantityArr.push(lastResult);
-      // console.log(quantityArr);
-      out4.textContent = quantityArr;
-    } else {
-      return;
-    }
-  }
-  // out4.textContent = quantityArr;
+  console.log(quantityArr);
+  out4.textContent = quantityArr.join(' ');
 }
