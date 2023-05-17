@@ -33,7 +33,6 @@ const btn2 = section2.querySelector('.btn-2');
 const out2 = section2.querySelector('.out-2');
 
 const a2 = [4, 't2', 'hh', 'dd', 4, 3, 54, `t12`, 67, 97, 't34'];
-console.log(inp2Ind);
 let arrStr2 = a2.map((el) => String(el));
 
 outArr2.textContent = '[ ' + a2 + ' ]';
@@ -53,4 +52,20 @@ function f2(arr) {
   }
 
   // console.log(inp);
+}
+console.log('=============================================');
+const btn3 = document.querySelector('.btn-3');
+const inp3 = document.querySelector('.inp-3');
+const out3 = document.querySelector('.out-3');
+const outArr3 = document.querySelector('.arr-3');
+const a3 = [4, 't2', '33', 'dd', 4, 3, 54, `t12`, 67, 97, 't34'];
+let arrStr3 = a3.map((el) => String(el));
+
+outArr3.textContent = '[ ' + a3 + ' ]';
+
+btn3.addEventListener('click', f6);
+function f6() {
+  let valInp = inp3.value;
+  console.log(arrStr3.indexOf(valInp));
+  out3.textContent = arrStr3.indexOf(valInp);
 }
