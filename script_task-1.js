@@ -78,3 +78,42 @@ function indexOfEmul(arr, item, from = 0) {
   }
   return -1;
 }
+console.log('=============================================');
+const sec4 = document.querySelector('.task-4');
+const btn4 = sec4.querySelector('.btn-4');
+const inp4 = sec4.querySelector('.inp-4');
+const out4 = sec4.querySelector('.out-4');
+const outArr4 = sec4.querySelector('.arr-4');
+const a4 = [4, 't2', 't33', 'tdd', 'tg', 4, 3, 54, `t12`, 67, 97, 't34'];
+
+outArr4.textContent = '[ ' + a3 + ' ]';
+
+btn4.addEventListener('click', f6);
+
+function f6() {
+  let arr = a4.map((el) => String(el));
+  // console.log(arr);
+  let inpValInd = inp4.value;
+  const quantityArr = [];
+  let lastResult;
+  // while (lastResult !== -1) {
+  //   lastResult = arr.indexOf(inpValInd, lastResult + 1);
+  //   if (lastResult !== -1) {
+  //     console.log(lastResult);
+  //     quantityArr.push(lastResult);
+  //   }
+  // }
+
+  for (let i = 0; i < arr.length; i++) {
+    lastResult = arr.indexOf(inpValInd, lastResult + 1);
+
+    if (lastResult !== -1) {
+      quantityArr.push(lastResult);
+      // console.log(quantityArr);
+      out4.textContent = quantityArr;
+    } else {
+      return;
+    }
+  }
+  // out4.textContent = quantityArr;
+}
