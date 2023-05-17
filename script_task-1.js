@@ -117,5 +117,5 @@ function f6() {
   // }
 
   console.log(quantityArr);
-  out4.textContent = quantityArr.join(' ');
+  out4.textContent = 'Index element - ' + quantityArr.join(' and ');
 }
